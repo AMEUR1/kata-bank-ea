@@ -4,14 +4,20 @@ import java.time.LocalDateTime;
 
 public class Operation {
 
+    private String type;
     private final LocalDateTime date;
     private final double amount;
     private final double balance;
 
-    public Operation(LocalDateTime date, double amount, double balance) {
-        this.date = date;
+    public Operation(String type, double amount, double balance) {
+        this.type = type;
+        this.date = LocalDateTime.now();
         this.amount = amount;
         this.balance = balance;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public LocalDateTime getDate() {
