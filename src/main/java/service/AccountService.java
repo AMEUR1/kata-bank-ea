@@ -1,7 +1,6 @@
 package service;
 
 import dao.AccountDAO;
-import model.Account;
 
 public class AccountService {
 
@@ -12,17 +11,23 @@ public class AccountService {
     }
 
     public void deposit(double amount) {
-        if(amount > 0){
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be positive and greater than zero.");
+        }else {
             accountDAO.deposit(amount);
         }
     }
 
     public void withdraw(double amount){
-        double balance = accountDAO.getAccount().getBalance();
-        if (amount > balance) {
-            throw new IllegalArgumentException("No funds");
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive and greater than zero.");
+        }else {
+            double balance = accountDAO.getAccount().getBalance();
+            if (amount > balance) {
+                throw new IllegalArgumentException("Insufficient funds");
+            }
+            accountDAO.withdraw(amount);
         }
-        accountDAO.withdraw(amount);
     }
 
     public double getBalance(){
