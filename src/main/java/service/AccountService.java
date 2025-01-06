@@ -29,4 +29,8 @@ public class AccountService {
         return accountDAO.getAccount().getBalance();
     }
 
+    public void printStatement() {
+        accountDAO.getAccount().getOperations().forEach(System.out::println);
+    }
+
 }
