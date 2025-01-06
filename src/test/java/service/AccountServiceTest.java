@@ -36,4 +36,12 @@ public class AccountServiceTest {
         assertEquals(100.0, accountService.getBalance(), "Balance after withdrawal should be 100.");
     }
 
+    @Test
+    void testPrintStatement() {
+        accountService.deposit(100.0);
+        accountService.withdraw(25.0);
+
+        accountService.printStatement();
+    }
+
 }
