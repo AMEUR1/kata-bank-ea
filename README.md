@@ -10,8 +10,8 @@ A simple Java project for managing bank account operations: deposit, withdrawal,
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AMEUR1/kata-franfinance-ea.git
-   cd kata-franfinance-ea
+   git clone https://github.com/AMEUR1/kata-bank-ea.git
+   cd kata-bank-ea
    ```
 2. Run tests
     ```bash
